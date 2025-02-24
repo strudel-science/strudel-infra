@@ -7,5 +7,4 @@ RUN apt-get update && apt-get install -y \
     npm
 
 USER ${NB_USER}
-WORKDIR /home/rstudio
 ENV SHELL=/bin/bash
