@@ -24,7 +24,7 @@ jobs:
     - name: Build the image and push it if `NO_PUSH` disabled
       uses: jupyterhub/repo2docker-action@master
       with:
-        NO_PUSH: "false"
+        NO_PUSH: "true"
         DOCKER_REGISTRY: "quay.io"
         # Put repo contents in /srv/repo, rather than the default (/home/jovyan). The home directory
         # is mounted over by persistent storage when we are using the built image in a JupyterHub, and

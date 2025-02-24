@@ -1,0 +1,9 @@
+name: strudel
+channels:
+  - conda-forge
+dependencies:
+  - git
+  - nodejs
+  - pip
+  - pip:
+    - strudel-cli
