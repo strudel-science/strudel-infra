@@ -7,6 +7,7 @@ COPY install-vscode-ext.sh /tmp/
 COPY vscode-extensions.txt /tmp/
 
 RUN conda env update -p ${CONDA_DIR} -f /tmp/environment.yaml && conda clean -afy
-RUN chmod +x /tmp/install-vscode-ext.sh && ./tmp/install-vscode-ext.sh /tmp/vscode-extensions.txt
+RUN chmod +x /tmp/install-vscode-ext.sh
+RUN ./tmp/install-vscode-ext.sh /tmp/vscode-extensions.txt
 
 ENV SHELL=/bin/bash
