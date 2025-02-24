@@ -4,6 +4,6 @@ USER ${NB_USER}
 
 COPY environment.yaml /tmp/
 
-RUN mamba env update -p ${CONDA_DIR} -f /tmp/environment.yml && mamba clean -afy
+RUN conda env update -p ${CONDA_DIR} -f /tmp/environment.yaml && conda clean -afy
 
 ENV SHELL=/bin/bash
