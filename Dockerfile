@@ -11,7 +11,7 @@ RUN conda env update -p ${CONDA_DIR} -f /tmp/environment.yaml && conda clean -af
 USER root
 
 RUN chmod +x /tmp/install-vscode-ext.sh
-RUN /tmp/install-vscode-ext.sh /tmp/vscode-extensions.txt
+RUN source /tmp/install-vscode-ext.sh /tmp/vscode-extensions.txt
 
 USER ${NB_USER}
 
