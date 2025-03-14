@@ -5,7 +5,10 @@ USER ${NB_USER}
 COPY environment.yaml /tmp/
 COPY install-vscode-ext.sh /tmp/
 COPY vscode-extensions.txt /tmp/
+USER root
+RUN chown -R ${NB_USER} /tmp
 
+USER ${NB_USER}
 RUN conda env update -p ${CONDA_DIR} -f /tmp/environment.yaml && conda clean -afy
 RUN chmod +x /tmp/install-vscode-ext.sh
 RUN source /tmp/install-vscode-ext.sh /tmp/vscode-extensions.txt
