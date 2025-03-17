@@ -54,7 +54,7 @@ The nbgitpuller link above is generated with the following parameters in the [nb
 In the VSCode IDE, we can open a new terminal by clicking the ☰ icon in the top left corner and selecting `Terminal > New Terminal`. In the `strudel-kit` directory, the user must set the base URL in a  `.env.local` file by setting the environment variable `VITE_BASE_URL` to the JupyterHub service prefix by running the following command in the terminal
 
 ```bash
-echo "VITE_BASE_URL=${JUPYTERHUB_SERVICE_PREFIX}/proxy/absolute/5175/" > .env.local.
+echo "VITE_BASE_URL=${JUPYTERHUB_SERVICE_PREFIX}proxy/absolute/5175/" > .env.local.
 ```
 
 Following the instructions in the [strudel-kit README](https://github.com/strudel-science/strudel-kit/blob/main/README.md)
