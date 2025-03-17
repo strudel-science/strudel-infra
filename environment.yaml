@@ -6,6 +6,7 @@ dependencies:
   - git
   - jupyter-vscode-proxy
   - jupyter-server-proxy
+  - nbgitpuller
   - pip
   - pip:
     - strudel-cli
