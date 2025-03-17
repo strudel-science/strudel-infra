@@ -25,11 +25,11 @@ This repository uses [repo2docker](https://repo2docker.readthedocs.io/en/latest/
 └── vscode-extensions.txt
 ```
 
-- `Dockerfile`: The Dockerfile to build the STRUDEL 2i2c hub image.
+- `Dockerfile`: The Dockerfile to build a JupyterHub compatible STRUDEL 2i2c hub image.
 - `README.md`: This file.
 - `environment.yaml`: The conda environment file for the STRUDEL 2i2c hub image.
 - `install-vscode-ext.sh`: A script to install VSCode extensions.
-- `start.sh`: A script to start the JupyterHub server.
+- `start.sh`: A script to run as an [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) to the container.
 - `vscode-extensions.txt`: A list of VSCode extensions to install.
 
 See [Configuration Files — repo2docker documentation](https://repo2docker.readthedocs.io/en/latest/config_files.html) for reference.
