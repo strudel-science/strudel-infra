@@ -85,3 +85,9 @@ to start the development server on the STRUDEL 2i2c hub.
 >     allowedHosts: ['.strudel.2i2c.cloud'],
 > },
 > ```
+
+### Stop your server
+
+Running a server consumes resources and costs money. When you are done with your server, please stop it by clicking the `Stop My Server` button in the JupyterHub control panel at
+
+- [https://strudel.2i2c.cloud/hub/home](https://strudel.2i2c.cloud/hub/home).
