@@ -40,9 +40,7 @@ See [Configuration Files — repo2docker documentation](https://repo2docker.read
 
 We can use [nbgitpuller](https://nbgitpuller.readthedocs.io/en/latest/) to create a URL that we can provide to the end-user which syncs the contents of the [strudel-science/strudel-kit](https://github.com/strudel-science/strudel-kit) GitHub repository to the STRUDEL 2i2c hub:
 
-```markdown
-[nbgitpuller link](https://strudel.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fstrudel-science%2Fstrudel-kit&urlpath=vscode%2F%3Ffolder%3D%2Fhome%2Fjovyan%2Fstrudel-kit&branch=main)
-```
+- [nbgitpuller link](https://strudel.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fstrudel-science%2Fstrudel-kit&urlpath=vscode%2F%3Ffolder%3D%2Fhome%2Fjovyan%2Fstrudel-kit&branch=main)
 
 The nbgitpuller link above is generated with the following parameters in the [nbgitpuller link generator](https://nbgitpuller.readthedocs.io/en/latest/link.html):
 
