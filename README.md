@@ -38,24 +38,33 @@ See [Configuration Files — repo2docker documentation](https://repo2docker.read
 
 ### nbgitpuller
 
-We can use [nbgitpuller](https://nbgitpuller.readthedocs.io/en/latest/) to create a URL that we can provide to the end-user which syncs the contents of the [strudel-science/strudel-kit](https://github.com/strudel-science/strudel-kit) GitHub repository to the STRUDEL 2i2c hub:
+We can use [nbgitpuller](https://nbgitpuller.readthedocs.io/en/latest/) to create a URL that we can provide to the end-user which syncs the contents of the [strudel-science/strudel-kit](https://github.com/strudel-science/strudel-kit) GitHub repository to the STRUDEL 2i2c hub.
 
-- [nbgitpuller link](https://strudel.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fstrudel-science%2Fstrudel-kit&urlpath=vscode%2F%3Ffolder%3D%2Fhome%2Fjovyan%2Fstrudel-kit&branch=main)
+We pull the `workshop-hub` branch that sets the base URL in a  `.env.local` file by setting the environment variable `VITE_BASE_URL` to the JupyterHub service prefix
+
+```bash
+VITE_BASE_URL=${JUPYTERHUB_SERVICE_PREFIX}proxy/absolute/5175/
+```
+
+and allows the domain host "strudel.2i2c.cloud" by setting `server.allowedHosts` in `vite.config.js.`
+
+```javascript
+server: {
+    allowedHosts: ['.strudel.2i2c.cloud'],
+```
+
+- [nbgitpuller link](https://strudel.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fstrudel-science%2Fstrudel-kit&urlpath=vscode%2F%3Ffolder%3D%2Fhome%2Fjovyan%2Fstrudel-kit&branch=workshop-hub)
 
 The nbgitpuller link above is generated with the following parameters in the [nbgitpuller link generator](https://nbgitpuller.readthedocs.io/en/latest/link.html):
 
 - JupyterHub URL: `https://strudel.2i2c.cloud`
 - Git Repository URL: `https://github.com/strudel-science/strudel-kit`
-- Branch: `main`
+- Branch: `workshop-hub`
 - Application to open: Custom URL: `vscode/?folder=/home/jovyan/strudel-kit`.
 
 ### VSCode
 
-In the VSCode IDE, we can open a new terminal by clicking the ☰ icon in the top left corner and selecting `Terminal > New Terminal`. In the `strudel-kit` directory, the user must set the base URL in a  `.env.local` file by setting the environment variable `VITE_BASE_URL` to the JupyterHub service prefix by running the following command in the terminal
-
-```bash
-echo "VITE_BASE_URL=${JUPYTERHUB_SERVICE_PREFIX}proxy/absolute/5175/" > .env.local
-```
+In the VSCode IDE, we can open a new terminal by clicking the ☰ icon in the top left corner and selecting `Terminal > New Terminal`.
 
 Following the instructions in the [strudel-kit README](https://github.com/strudel-science/strudel-kit/blob/main/README.md)
 
@@ -65,26 +74,15 @@ npm install
 
 to install the strudel-kit dependencies.
 
-After setting the base url in `.env.local` , the user can run
-
 ```bash
 npm start
 ```
 
-to start the development server on the STRUDEL 2i2c hub.
+to start the development server on the STRUDEL 2i2c hub. Follow the port forwarding to [https://strudel.2i2c.cloud/user/<your-username>/proxy/absolute/5175/](https://strudel.2i2c.cloud/user-redirect/proxy/absolute/5175/) to view the app in another browser window.
 
->[!note]
-> If you see the message:
->
-> Blocked request. This host ("strudel.2i2c.cloud") is not allowed. To allow this host, add "strudel.2i2c.cloud" to `server.allowedHosts` in vite.config.js.`
->
-> Please add the following setting to the `vite.config.js` file:
->
-> ```javascript
-> server: {
->     allowedHosts: ['.strudel.2i2c.cloud'],
-> },
-> ```
+### Server culling
+
+Sessions on the workshop hub are culled after a 1 hour period of inactivity, and your work is not saved to a persistent storage disk. Please version control and push your code to GitHub for any work you would like to save for the future.
 
 ### Stop your server
 
