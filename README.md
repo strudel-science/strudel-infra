@@ -51,6 +51,7 @@ and allows the domain host "strudel.2i2c.cloud" by setting `server.allowedHosts`
 ```javascript
 server: {
     allowedHosts: ['.strudel.2i2c.cloud'],
+}
 ```
 
 - [nbgitpuller link](https://strudel.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fstrudel-science%2Fstrudel-kit&urlpath=vscode%2F%3Ffolder%3D%2Fhome%2Fjovyan%2Fstrudel-kit&branch=workshop-hub)
@@ -78,7 +79,7 @@ to install the strudel-kit dependencies.
 npm start
 ```
 
-to start the development server on the STRUDEL 2i2c hub. Follow the port forwarding to [https://strudel.2i2c.cloud/user/<your-username>/proxy/absolute/5175/](https://strudel.2i2c.cloud/user-redirect/proxy/absolute/5175/) to view the app in another browser window.
+to start the development server on the STRUDEL 2i2c hub. Follow the port forwarding to [`https://strudel.2i2c.cloud/user/<your-username>/proxy/absolute/5175/`](https://strudel.2i2c.cloud/user-redirect/proxy/absolute/5175/) to view the app in another browser window.
 
 ### Server culling
 
