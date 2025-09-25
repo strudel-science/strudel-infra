@@ -2,7 +2,6 @@ name: strudel
 channels:
   - conda-forge
 dependencies:
-  - code-server
   - git
   - jupyter-vscode-proxy
   - jupyter-server-proxy
