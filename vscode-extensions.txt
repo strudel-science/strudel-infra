@@ -1,1 +1,2 @@
 ms-python.python
+saoudrizwan.claude-dev
