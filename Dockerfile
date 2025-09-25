@@ -14,7 +14,6 @@ RUN xargs apt-get -y install --yes -qq < /tmp/apt.txt
 
 USER ${NB_USER}
 RUN conda env update -p ${CONDA_DIR} -f /tmp/environment.yaml && conda clean -afy
-RUN curl -fsSL https://code-server.dev/install.sh | sh
 RUN chmod +x /tmp/install-vscode-ext.sh
 RUN chmod +x /tmp/start.sh
 RUN source /tmp/install-vscode-ext.sh /tmp/vscode-extensions.txt
