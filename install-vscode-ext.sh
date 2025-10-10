@@ -1,15 +1,11 @@
 #!/bin/bash
 
+# Run inside a shell that has the proper environment
+
 # Install VSCode extensions. 
 # These get installed to $CONDA_PREFIX/envs/notebook/share/code-server/extensions/
 
-ext_file="$1"
+set -eu
 
-echo "Checking for '$ext_file'..."
+xargs -a $1 -I{} code-server --install-extension {}
 
-if test -f "$ext_file"
-then
-    for EXT in $(cat "$ext_file")
-        do code-server --install-extension $EXT
-    done
-fi
