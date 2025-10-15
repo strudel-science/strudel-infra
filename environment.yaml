@@ -7,7 +7,7 @@ dependencies:
   - jupyter-vscode-proxy
   - jupyter-server-proxy
   - nbgitpuller
-  - gh-scoped-creds
   - pip
   - pip:
       - strudel-cli
+      - git-credential-helpers
