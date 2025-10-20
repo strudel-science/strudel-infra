@@ -1,3 +1,4 @@
 ms-python.python
 rooveterinaryinc.roo-cline
 saoudrizwan.claude-dev
+google.geminicodeassist
